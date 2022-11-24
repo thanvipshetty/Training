@@ -27,6 +27,7 @@ public class MatrixClass {
                 sum = sum + a[i][j];
             }
         }
+        System.out.println(sum);
         return sum;
     }
 

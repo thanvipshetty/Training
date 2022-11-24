@@ -1,9 +1,11 @@
 package org.example;
 
 import org.example.assign3.InverseOfString;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class InverseTesting {
     @Test

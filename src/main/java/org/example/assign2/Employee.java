@@ -1,10 +1,8 @@
 package org.example.assign2;
 
-import java.util.stream.Stream;
-
 import static java.util.stream.Collectors.joining;
 
-public class Employees {
+public class Employee {
     String firstName;
     String lastName;
     int empId;
@@ -12,17 +10,37 @@ public class Employees {
     String gender;
     String department;
 
-    public Employees() {
+    public Employee() {
         super();
     }
 
-    public Employees(String firstName, String lastName, int empId, int age, String gender, String department) {
+    public Employee(String firstName, String lastName, int empId, int age, String gender, String department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.empId = empId;
         this.age = age;
         this.gender = gender;
         this.department = department;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getEmpId() {
+        return empId;
     }
 
     public int getAge() {
@@ -45,28 +63,9 @@ public class Employees {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public String setDepartment(String department) {
         this.department = department;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getEmpId() {
-        return empId;
+        return department;
     }
 
     public void setEmpId(int empId) {
