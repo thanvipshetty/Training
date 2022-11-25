@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@ToString
 
 @Component
 public class Company {
