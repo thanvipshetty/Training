@@ -7,7 +7,10 @@ import com.example.services.CompanyService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
@@ -28,6 +31,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BooleanSupplier;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 @SpringBootTest
 //@DataJpaTest
@@ -46,7 +50,7 @@ public class CompanyRepositoryImplTest {
     @Test
     @Rollback(true)
     public void addNewCompanyDetails()  {
-        Company c = new Company(139,"Tieto","Bangalore");
+       Company c = new Company(144,"Tieto","Bangalore");
         boolean newdetails = companyRepository.save(c);
         Assertions.assertEquals(true,newdetails);
        // Assertions.assertNotNull(template);
@@ -58,7 +62,7 @@ public class CompanyRepositoryImplTest {
     @Rollback(value = true)
     public void testFindAll(){
 
-        Assertions.assertEquals(21,companyRepository.findAll().size());
+        Assertions.assertEquals(26,companyRepository.findAll().size());
     }
 
     @Test
