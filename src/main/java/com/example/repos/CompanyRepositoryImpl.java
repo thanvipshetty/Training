@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 @Repository
@@ -19,11 +20,16 @@ public class CompanyRepositoryImpl implements CrudRepository<Company> {
         super();
         this.template = template;
     }
+    private int autoKeyGen(){
+        String sql = "select max(company_id) from company_details";
+        int result = template.queryForObject(sql, Integer.class);
+        return result+1;
+    }
 
     @Override
     public boolean save(Company entity) {
         String sql = "insert into company_details values(?,?,?)";
-        int rowAdded =  template.update(sql,entity.getCompanyId(),entity.getCompanyName(),entity.getCompanyLocation());
+        int rowAdded =  template.update(sql,autoKeyGen(),entity.getCompanyName(),entity.getCompanyLocation());
         return rowAdded==1;
     }
 

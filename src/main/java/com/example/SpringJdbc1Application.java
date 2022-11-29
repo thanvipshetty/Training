@@ -13,13 +13,13 @@ public class SpringJdbc1Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx= SpringApplication.run(SpringJdbc1Application.class, args);
         CompanyService companyService = ctx.getBean(CompanyService.class);
-        int key=3;
+        int key=1;
         switch (key){
             case 1:
                 Company obj = ctx.getBean(Company.class);
-                obj.setCompanyId(Integer.parseInt(args[0]));
-                obj.setCompanyName(args[1]);
-                obj.setCompanyLocation(args[2]);
+                //obj.setCompanyId(Integer.parseInt(args[0]));
+                obj.setCompanyName(args[0]);
+                obj.setCompanyLocation(args[1]);
                 System.out.println(obj);
                 System.out.println("Company details got added (true or false) :" + companyService.save(obj));
                 break;

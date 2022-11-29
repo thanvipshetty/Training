@@ -21,6 +21,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.io.ObjectInputFilter;
@@ -48,9 +49,12 @@ public class CompanyRepositoryImplTest {
 
 
     @Test
-    @Rollback(true)
+    //@Rollback(true)
+    @Transactional
     public void addNewCompanyDetails()  {
-       Company c = new Company(144,"Tieto","Bangalore");
+       Company c = new Company();
+       c.setCompanyName("del");
+       c.setCompanyLocation("delhi");
         boolean newdetails = companyRepository.save(c);
         Assertions.assertEquals(true,newdetails);
        // Assertions.assertNotNull(template);
@@ -59,10 +63,10 @@ public class CompanyRepositoryImplTest {
 //        boolean savedCompany = companyService.save(c);
     }
     @Test
-    @Rollback(value = true)
+   // @Rollback(value = true)
     public void testFindAll(){
 
-        Assertions.assertEquals(26,companyRepository.findAll().size());
+        Assertions.assertEquals(28,companyRepository.findAll().size());
     }
 
     @Test
