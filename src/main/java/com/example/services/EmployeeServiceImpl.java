@@ -1,5 +1,6 @@
 package com.example.services;
 
+import com.example.Exception.EmployeeNotFoundException;
 import com.example.entity.Employee;
 import com.example.repos.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,20 +27,20 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee getByEmployeeId(Long employeeId) throws Exception {
+    public Employee getByEmployeeId(int employeeId) throws EmployeeNotFoundException {
         Optional<Employee> optional = repo.findById(employeeId);
         Employee emp = null;
         if(optional.isPresent()){
             emp = optional.get();
         }
         else{
-            throw new Exception("Employee not found for id " + employeeId);
+            throw new EmployeeNotFoundException(employeeId);
         }
         return emp;
     }
 
     @Override
-    public Employee updateEmployee(Employee employee, Long employeeId) {
+    public Employee updateEmployee(Employee employee, int employeeId) {
         Employee depDB = repo.findById(employeeId).get();
 
         if (Objects.nonNull(employee.getEmpName()) && !"".equalsIgnoreCase(employee.getEmpName())) {
@@ -59,8 +60,11 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public void deleteEmployeeById(Long employeeId) {
-        repo.deleteById(employeeId);
+    public Boolean deleteEmployeeById(int employeeId) throws EmployeeNotFoundException {
+        return this.repo.findById(employeeId).map(emp -> {
+            this.repo.delete(emp);
+            return true;
+        }).orElseThrow(() -> new EmployeeNotFoundException(employeeId));
 
     }
 
