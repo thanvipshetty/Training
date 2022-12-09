@@ -21,9 +21,9 @@ public class EmployeeServiceImpl implements EmployeeService{
     //add new values to the database
     @Override
     public Employee saveEmployee(Employee employee) {
-        Employee nameExists = findUserByName(employee.getEmpName());
-        Employee emailExists = findUserByEmail(employee.getEmpEmail());
-        Employee phoneExists = findUserByPhone(employee.getEmpPhoneNum());
+        Employee nameExists = findUserByEmpName(employee.getEmpName());
+        Employee emailExists = findUserByEmpEmail(employee.getEmpEmail());
+        Employee phoneExists = findUserByEmpPhoneNum(employee.getEmpPhoneNum());
             if( nameExists!=null){
                 throw new CustomException("employee name is already present");
             }
@@ -36,6 +36,16 @@ public class EmployeeServiceImpl implements EmployeeService{
                 return repo.save(employee);
             }
     }
+
+//    @Override
+//    public Employee saveEmployee(Employee employee) {
+//        Employee phoneExists = findUserByEmpEmail(employee.getEmpEmail());
+//        if(phoneExists!=null){
+//            throw new CustomException("phonenumber is already is present");
+//        }else {
+//            return repo.save(employee);
+//        }
+//    }
 
     //fetch all the employee details from the database
     @Override
@@ -83,18 +93,18 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee findUserByName(String empName) {
-        return repo.findByName(empName);
+    public Employee findUserByEmpName(String empName) {
+        return repo.findByEmpName(empName);
     }
 
     @Override
-    public Employee findUserByEmail(String empEmail) {
-        return repo.findByEmail(empEmail);
+    public Employee findUserByEmpEmail(String empEmail) {
+        return repo.findByEmpEmail(empEmail);
     }
 
     @Override
-    public Employee findUserByPhone(String empPhoneNum) {
-        return repo.findByPhone(empPhoneNum);
+    public Employee findUserByEmpPhoneNum(String empPhoneNum) {
+        return repo.findByEmpPhoneNum(empPhoneNum);
     }
 
 }

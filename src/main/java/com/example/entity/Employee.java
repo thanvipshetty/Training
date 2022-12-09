@@ -26,10 +26,10 @@ import javax.validation.constraints.Size;
 @FieldDefaults(level = AccessLevel.PRIVATE)  //each field is private
 
 @Entity //this class is mapped to database
-@Table(name="employee_details",uniqueConstraints = { @UniqueConstraint(columnNames = { "employee_phonenumber", "employee_email" })})
+@Table(name="employee_details",uniqueConstraints = { @UniqueConstraint(columnNames = { "empPhoneNum", "employee_email" })})
 public class Employee {
     @Id //primary key
-    @GeneratedValue(strategy = GenerationType.SEQUENCE) //auto generation in sequence
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto generation in sequence
     @Column(name="employee_id") // column name in database
     int empId;
 
@@ -40,7 +40,7 @@ public class Employee {
     String empName;
 
     @NotNull
-    @Column(name="employee_phonenumber" ,unique = true)
+    @Column(unique = true)
     @Pattern(regexp="^[0-9]*") // only numbers are considered
     @Size(min = 10, max = 12, message = "Invalid PhoneNumber")
     String empPhoneNum;

@@ -16,10 +16,10 @@ public interface EmployeeService {
       Employee updateEmployee(Employee employee, int employeeId);
       // delete an employee detail by particular id
       Boolean deleteEmployeeById(int employeeId) ;
-      Employee findUserByName(String empName);
-
-      Employee findUserByEmail(String empEmail);
-
-      Employee findUserByPhone(String empPhoneNum);
+        Employee findUserByEmpName(String empName);
+//
+     Employee findUserByEmpEmail(String empEmail);
+//
+    Employee findUserByEmpPhoneNum(String empPhoneNum);
 
 }
