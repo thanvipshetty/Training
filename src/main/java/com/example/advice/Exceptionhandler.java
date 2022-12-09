@@ -20,7 +20,7 @@ public class Exceptionhandler {
     @ResponseBody
     @ExceptionHandler(CustomException.class)
     @ResponseStatus(HttpStatus.ALREADY_REPORTED)
-    String departmentNotFoundHandler(CustomException ex) {
+    String empNotFoundHandler(CustomException ex) {
         return ex.getMessage();
     }
 

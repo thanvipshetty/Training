@@ -21,12 +21,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     //add new values to the database
     @Override
     public Employee saveEmployee(Employee employee) {
-        Employee nameExists = findUserByEmpName(employee.getEmpName());
         Employee emailExists = findUserByEmpEmail(employee.getEmpEmail());
         Employee phoneExists = findUserByEmpPhoneNum(employee.getEmpPhoneNum());
-            if( nameExists!=null){
-                throw new CustomException("employee name is already present");
-            }
             if(emailExists!=null){
                 throw new CustomException("email is already present");
             }
@@ -94,16 +90,26 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee findUserByEmpName(String empName) {
-        return repo.findByEmpName(empName);
+        Optional<Employee> optional = Optional.ofNullable(repo.findByEmpName(empName));
+        Employee emp = null;
+        if(optional.isPresent()){
+            emp = optional.get();
+        }
+        else{
+            throw new CustomException("name is not present");
+        }
+        return emp;
     }
 
     @Override
     public Employee findUserByEmpEmail(String empEmail) {
+
         return repo.findByEmpEmail(empEmail);
     }
 
     @Override
     public Employee findUserByEmpPhoneNum(String empPhoneNum) {
+
         return repo.findByEmpPhoneNum(empPhoneNum);
     }
 

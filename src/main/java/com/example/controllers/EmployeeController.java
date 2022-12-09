@@ -46,6 +46,12 @@ public class EmployeeController  {
         return new ResponseEntity(this.employeeService.getByEmployeeId(empId), HttpStatus.OK);
     }
 
+    @GetMapping("/employees/employee/{name}")
+    public ResponseEntity findByEmpName(@PathVariable("name") String empName) {
+        logger.trace("find by employee name method Accessed");
+        return new ResponseEntity(this.employeeService.findUserByEmpName(empName), HttpStatus.OK);
+    }
+
     @PutMapping("/employees/{id}")
     public ResponseEntity<Employee> updateById( @RequestBody Employee employee,@PathVariable("id") int empId){
         logger.trace("update by id method Accessed");

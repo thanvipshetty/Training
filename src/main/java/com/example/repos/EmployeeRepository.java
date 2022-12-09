@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository //this class provides the mechanism for storage ,retrieval, search, update and delete operation on objects.
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     Employee findByEmpName(String empName);
-   Employee findByEmpEmail(String empEmail);
-   Employee findByEmpPhoneNum(String empPhoneNum);
+    Employee findByEmpEmail(String empEmail);
+    Employee findByEmpPhoneNum(String empPhoneNum);
 
 }
