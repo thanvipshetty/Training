@@ -1,0 +1,35 @@
+2022-12-09 18:01:21.647  INFO 21608 --- [main] c.example.RestserviceProjectApplication  : Starting RestserviceProjectApplication using Java 11.0.14 on WPG02VB66 with PID 21608 (C:\Users\pshettha\IdeaProjects\restservice-project\target\classes started by pshettha in C:\Users\pshettha\IdeaProjects\restservice-project)
+2022-12-09 18:01:21.652 DEBUG 21608 --- [main] c.example.RestserviceProjectApplication  : Running with Spring Boot v2.7.6, Spring v5.3.24
+2022-12-09 18:01:21.653  INFO 21608 --- [main] c.example.RestserviceProjectApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 18:01:22.065  INFO 21608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-09 18:01:22.066  INFO 21608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-12-09 18:01:22.086  INFO 21608 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.repos.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2022-12-09 18:01:22.087  INFO 21608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+2022-12-09 18:01:22.093  INFO 21608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-09 18:01:22.093  INFO 21608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-09 18:01:22.113  INFO 21608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2022-12-09 18:01:22.409  INFO 21608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-09 18:01:22.413  INFO 21608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-09 18:01:22.413  INFO 21608 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.69]
+2022-12-09 18:01:22.503  INFO 21608 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-09 18:01:22.504  INFO 21608 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 800 ms
+2022-12-09 18:01:22.608  INFO 21608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-09 18:01:22.639  INFO 21608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-12-09 18:01:22.770  INFO 21608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-09 18:01:22.952  INFO 21608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-09 18:01:22.962  INFO 21608 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-09 18:01:23.340  INFO 21608 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-09 18:01:23.346  INFO 21608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-09 18:01:23.595  WARN 21608 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-09 18:01:23.870  INFO 21608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-09 18:01:23.877  INFO 21608 --- [main] c.example.RestserviceProjectApplication  : Started RestserviceProjectApplication in 2.589 seconds (JVM running for 3.386)
+2022-12-09 18:01:41.324  INFO 21608 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-09 18:01:41.326  INFO 21608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-09 18:01:41.327  INFO 21608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-09 18:01:41.345 TRACE 21608 --- [http-nio-8080-exec-1] c.e.controllers.EmployeeController       : find all method Accessed
+2022-12-09 18:01:42.391 TRACE 21608 --- [http-nio-8080-exec-4] c.e.controllers.EmployeeController       : find all method Accessed
+2022-12-09 18:01:43.141 TRACE 21608 --- [http-nio-8080-exec-5] c.e.controllers.EmployeeController       : find all method Accessed
+2022-12-09 18:01:43.453 TRACE 21608 --- [http-nio-8080-exec-2] c.e.controllers.EmployeeController       : find all method Accessed
+2022-12-09 18:13:35.356  INFO 21608 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-09 18:13:35.358  INFO 21608 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-09 18:13:35.367  INFO 21608 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
